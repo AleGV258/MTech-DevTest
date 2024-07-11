@@ -1,0 +1,51 @@
+﻿@model DevCandidateTest_MichellAlejandroGarciaVargas.Models.Employee
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @* @Html.DisplayNameFor(model => model.NameEmployee) *@ Employee Name:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NameEmployee)
+        </dd>
+        <dt class="col-sm-2">
+            @* @Html.DisplayNameFor(model => model.LastNameEmployee) *@ Employee Last Name:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LastNameEmployee)
+        </dd>
+        <dt class="col-sm-2">
+            @* @Html.DisplayNameFor(model => model.RfcEmployee) *@ Employee RFC:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RfcEmployee)
+        </dd>
+        <dt class="col-sm-2">
+            @* @Html.DisplayNameFor(model => model.BornDateEmployee) *@ Employee Born Date:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BornDateEmployee)
+        </dd>
+        <dt class="col-sm-2">
+            @* @Html.DisplayNameFor(model => model.StatusEmployee) *@ Employee Status:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StatusEmployee)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete mt-3">
+        <a asp-action="Index" class="btn btn-secondary">Back to Employee List</a> |
+        <input type="hidden" asp-for="IdEmployee" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+    </form>
+</div>

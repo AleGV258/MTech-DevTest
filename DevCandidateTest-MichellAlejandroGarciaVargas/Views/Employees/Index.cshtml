@@ -1,0 +1,83 @@
+﻿@model IEnumerable<DevCandidateTest_MichellAlejandroGarciaVargas.Models.Employee>
+
+@{
+    ViewData["Title"] = "Employees Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to the Register Employees App</h1>
+</div>
+
+<h1>Employees</h1>
+
+<p class="form-group">
+    <a asp-action="Create" class="btn btn-info">Create New</a>
+    <input type="text" id="searchInput" style="float:right; width:20%" placeholder="Search" class="form-control" oninput="searchEmployees()" />
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @* @Html.DisplayNameFor(model => model.NameEmployee) *@ Employee Name
+            </th>
+            <th>
+                @* @Html.DisplayNameFor(model => model.LastNameEmployee) *@ Employee Last Name
+            </th>
+            <th>
+                @* @Html.DisplayNameFor(model => model.RfcEmployee) *@ Employee RFC
+            </th>
+            <th>
+                @* @Html.DisplayNameFor(model => model.BornDateEmployee) *@ Employe Born Date
+            </th>
+            <th>
+                @* @Html.DisplayNameFor(model => model.StatusEmployee) *@ Employe Status
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            <tr class="column justify-content-md-center">
+            <td>
+                @Html.DisplayFor(modelItem => item.NameEmployee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastNameEmployee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RfcEmployee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BornDateEmployee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusEmployee)
+            </td>
+            <td>
+                <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@item.IdEmployee">Edit</a> |
+                <a asp-action="Details" class="btn btn-primary" asp-route-id="@item.IdEmployee">Details</a> |
+                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.IdEmployee">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<script>
+    function searchEmployees() {
+        var searchText = document.getElementById("searchInput").value.toUpperCase();
+        var rows = document.getElementsByTagName("tr");
+        for (var i = 0; i < rows.length; i++) {
+            var employeeName = rows[i].getElementsByTagName("td")[0];
+            if (employeeName) {
+                var textName = employeeName.textContent || employeeName.innerText;
+                if (textName.toUpperCase().indexOf(searchText) > -1) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+

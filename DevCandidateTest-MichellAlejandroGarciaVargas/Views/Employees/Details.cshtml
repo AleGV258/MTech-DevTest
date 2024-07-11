@@ -1,0 +1,49 @@
+﻿@model DevCandidateTest_MichellAlejandroGarciaVargas.Models.Employee
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @* @Html.DisplayNameFor(model => model.NameEmployee) *@ Employee Name:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NameEmployee)
+        </dd>
+        <dt class = "col-sm-2">
+            @* @Html.DisplayNameFor(model => model.LastNameEmployee) *@ Employee Last Name:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastNameEmployee)
+        </dd>
+        <dt class = "col-sm-2">
+            @* @Html.DisplayNameFor(model => model.RfcEmployee) *@ Employee RFC:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RfcEmployee)
+        </dd>
+        <dt class = "col-sm-2">
+            @* @Html.DisplayNameFor(model => model.BornDateEmployee) *@ Employee Born Date:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BornDateEmployee)
+        </dd>
+        <dt class = "col-sm-2">
+            @* @Html.DisplayNameFor(model => model.StatusEmployee) *@ Employee Status:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StatusEmployee)
+        </dd>
+    </dl>
+
+    <div class="mt-3">
+        <a asp-action="Index" class="btn btn-secondary">Back to Employee List</a> |
+        <a asp-action="Edit" asp-route-id="@Model?.IdEmployee" class="btn btn-primary">Edit</a>
+    </div>
+</div>
