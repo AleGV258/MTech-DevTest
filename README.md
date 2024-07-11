@@ -26,8 +26,10 @@ _Se demuestra cómo se debe desplegar el proyecto para su correcto funcionamient
 
 1. Descarga o clona el proyecto localmente
 
-2. Una vez instalado ```Visual Studio``` con los modulos correctos, se debe clonar el repositorio localmente
+2. Una vez instalado ```Visual Studio``` con los modulos correctos, se debe clonar el repositorio localmente, o desde esta mismo repositorio de GitHub.
 
 3. Una vez clonado, se debe modificar el archivo ```\DevCandidateTest-MichellAlejandroGarciaVargas\appsettings.json``` en ```ConnectionStrings``` a la ruta de la base de datos de la máquina local, sutituyendo la ruta absoluta en ```AttachDbFilename``` esta ruta absoluta de tu máquina debe termianr con la base de datos en ```~\DevCandidateTest-MichellAlejandroGarciaVargas\Database\DataStoreDB.mdf```, de esta forma la app podrá acceder a los datos.
 
-4. Una vez realizado lo anterior ya se puede depurar para probar la aplicación.
+4. Si lo anterior manda un error, se debe equiparar las rutas de ```appsettings.json``` con el ```DBContextBuilder``` en la ruta ```~\DevCandidateTest-MichellAlejandroGarciaVargas\Models\DataStoreDbContext.cs``` en el método ```OnConfiguring```.
+
+5. Una vez realizado lo anterior ya se puede depurar y/o compilar para probar la aplicación.
